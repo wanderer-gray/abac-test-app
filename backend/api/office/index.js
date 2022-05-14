@@ -139,7 +139,7 @@ module.exports = async function (app) {
   }, async function (request, reply) {
     app.log.trace('deleteOffice')
 
-    const { officeId } = request.body
+    const { officeId } = request.query
 
     await deleteOffice(officeId, app)
 

@@ -5,7 +5,7 @@ module.exports = async function (employeeId, userId, officeId, positionId, app) 
 
   log.debug(`createEmployee: employeeId=${employeeId}; userId=${userId}; officeId=${officeId}; positionId=${positionId}`)
 
-  await knex('position')
+  await knex('employee')
     .insert({
       employeeId,
       userId,

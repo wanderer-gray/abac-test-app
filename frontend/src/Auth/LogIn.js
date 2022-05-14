@@ -4,7 +4,7 @@ import React, {
 } from 'react'
 import PropTypes from 'prop-types'
 import {
-  Paper,
+  Grid,
   Typography,
   TextField,
   Button
@@ -28,50 +28,53 @@ export default function LogIn ({ OnLogin }) {
   })
 
   return (
-    <Paper
+    <Grid
+      container={true}
+      justifyContent={'center'}
+      alignItems={'center'}
       sx={{
-        boxShadow: 1,
-        borderRadius: 2,
-        p: 2,
-        mx: 'auto',
-        maxWidth: 480
+        position: 'fixed',
+        width: '100%',
+        height: '100%'
       }}
     >
-      <Typography
-        sx={{ mb: 2 }}
-        variant={'h5'}
-      >
-        Войти в систему
-      </Typography>
+      <Grid item={true}>
+        <Typography
+          sx={{ mb: 2 }}
+          variant={'h5'}
+        >
+          Войти в систему
+        </Typography>
 
-      <TextField
-        sx={{ mb: 1 }}
-        type={'email'}
-        size={'small'}
-        fullWidth={true}
-        placeholder={'Nickname'}
-        value={nickname}
-        onChange={(event) => setNickname(event.target.value)}
-      />
-      <TextField
-        sx={{ mb: 2 }}
-        type={'password'}
-        size={'small'}
-        fullWidth={true}
-        placeholder={'Password'}
-        value={password}
-        onChange={(event) => setPassword(event.target.value)}
-      />
+        <TextField
+          sx={{ mb: 1 }}
+          label={'Логин'}
+          placeholder={'Введите логин...'}
+          fullWidth={true}
+          value={nickname}
+          onChange={(event) => setNickname(event.target.value)}
+        />
 
-      <Button
-        sx={{ mb: 2 }}
-        variant={'outlined'}
-        fullWidth={true}
-        onClick={logIn}
-      >
-        Войти
-      </Button>
-    </Paper>
+        <TextField
+          sx={{ mb: 2 }}
+          type={'password'}
+          label={'Пароль'}
+          placeholder={'Введите пароль...'}
+          fullWidth={true}
+          value={password}
+          onChange={(event) => setPassword(event.target.value)}
+        />
+
+        <Button
+          sx={{ mb: 2 }}
+          variant={'outlined'}
+          fullWidth={true}
+          onClick={logIn}
+        >
+          Войти
+        </Button>
+      </Grid>
+    </Grid>
   )
 }
 

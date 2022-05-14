@@ -1,5 +1,4 @@
-const { status } = require('./schemaStatus')
-const { members } = require('./schemaMember')
+const { statusId } = require('./schemaStatus')
 
 const taskId = {
   description: 'Идентификатор задачи',
@@ -27,16 +26,14 @@ const task = {
     'taskId',
     'title',
     'createdAt',
-    'status',
-    'members'
+    'statusId'
   ],
   additionalProperties: false,
   properties: {
     taskId,
     title,
     createdAt,
-    status,
-    members
+    statusId
   }
 }
 

@@ -86,13 +86,14 @@ module.exports = async function (app) {
   }, async function (request) {
     app.log.trace('createTask')
 
+    const { userId } = request
     const {
       taskId,
       title,
       statusId
     } = request.body
 
-    return createTask(taskId, title, statusId, app)
+    return createTask(userId, taskId, title, statusId, app)
   })
 
   app.put('/updateTask', {
@@ -148,7 +149,7 @@ module.exports = async function (app) {
   }, async function (request, reply) {
     app.log.trace('deleteTask')
 
-    const { taskId } = request.body
+    const { taskId } = request.query
 
     await deleteTask(taskId, app)
 

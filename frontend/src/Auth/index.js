@@ -7,7 +7,6 @@ import React, {
 } from 'react'
 import PropTypes from 'prop-types'
 import {
-  BrowserRouter as Router,
   Routes,
   Route,
   Navigate
@@ -23,9 +22,9 @@ export function useAuth () {
 export default function Auth ({ children }) {
   const [isAuth, setIsAuth] = useState(null)
 
-  const check = useCallback(async () => {
+  const checkAuth = useCallback(async () => {
     try {
-      const isAuth = await AuthAPI.check()
+      const isAuth = await AuthAPI.checkAuth()
 
       setIsAuth(isAuth)
     } catch {
@@ -48,13 +47,13 @@ export default function Auth ({ children }) {
       })
     }
 
-    check()
+    checkAuth()
   })
 
   useEffect(() => {
-    check()
+    checkAuth()
 
-    const checker = setInterval(check, 30 * 1000)
+    const checker = setInterval(checkAuth, 30 * 1000)
 
     return () => clearInterval(checker)
   }, [])
@@ -65,17 +64,15 @@ export default function Auth ({ children }) {
 
   if (!isAuth) {
     return (
-      <Router>
-        <Routes>
-          <Route path={'/logIn'} element={<LogIn OnLogin={check} />} />
-          <Route path={'*'} element={<Navigate to={'/logIn'}/>} />
-        </Routes>
-      </Router>
+      <Routes>
+        <Route path={'/logIn'} element={<LogIn OnLogin={checkAuth} />} />
+        <Route path={'*'} element={<Navigate to={'/logIn'}/>} />
+      </Routes>
     )
   }
 
   return (
-    <AuthContext.Provider value={{ check, logOut }}>
+    <AuthContext.Provider value={{ check: checkAuth, logOut }}>
       {children}
     </AuthContext.Provider>
   )

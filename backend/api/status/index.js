@@ -142,7 +142,7 @@ module.exports = async function (app) {
   }, async function (request, reply) {
     app.log.trace('deleteStatus')
 
-    const { statusId } = request.body
+    const { statusId } = request.query
 
     await deleteStatus(statusId, app)
 

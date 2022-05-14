@@ -142,7 +142,7 @@ module.exports = async function (app) {
   }, async function (request, reply) {
     app.log.trace('deleteRole')
 
-    const { roleId } = request.body
+    const { roleId } = request.query
 
     await deleteRole(roleId, app)
 

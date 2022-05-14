@@ -6,7 +6,15 @@ module.exports = {
   globals: {
     http: true,
     nofity: true,
-    AuthAPI: true
+    AuthAPI: true,
+    UserAPI: true,
+    OfficeAPI: true,
+    PositionAPI: true,
+    EmployeeAPI: true,
+    StatusAPI: true,
+    TaskAPI: true,
+    RoleAPI: true,
+    MemberAPI: true
   },
   extends: [
     'plugin:react/recommended',

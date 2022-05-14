@@ -157,7 +157,7 @@ module.exports = async function (app) {
   }, async function (request, reply) {
     app.log.trace('deleteEmployee')
 
-    const { employeeId } = request.body
+    const { employeeId } = request.query
 
     await deleteEmployee(employeeId, app)
 

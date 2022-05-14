@@ -42,7 +42,7 @@ module.exports = {
       },
       pool: {
         min: 1,
-        max: 2
+        max: 4
       },
       migrations: {
         tableName: 'knex_migrations'

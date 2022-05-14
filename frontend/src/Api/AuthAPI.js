@@ -1,5 +1,5 @@
 export const AuthAPI = {
-  check: () =>
+  checkAuth: () =>
     http('authentication/checkAuth')
       .method('get'),
 
