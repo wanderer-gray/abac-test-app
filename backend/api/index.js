@@ -1,5 +1,5 @@
 module.exports = async function (app) {
-  app.log.info('Mount "src"')
+  app.log.info('Mount "api"')
 
   app.decorateRequest('userId', null)
 

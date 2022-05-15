@@ -3,10 +3,6 @@ const port = 8080
 
 module.exports = {
   development: {
-    sa: {
-      email: 'admin',
-      password: '123456'
-    },
     oas: {
       routePrefix: '/swagger',
       swagger: {
