@@ -67,7 +67,7 @@ export default function App () {
   const currentPath = useMemo(() => location.pathname, [location.pathname])
 
   return (
-    <Container maxWidth={'md'}>
+    <Container maxWidth={'md'} disableGutters={true}>
       <Grid
         container={true}
         spacing={4}

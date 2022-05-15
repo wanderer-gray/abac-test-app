@@ -153,6 +153,7 @@ export default function Employees ({ userId }) {
       </ContainerSearch>
 
       <ContainerTable
+        size={'small'}
         columns={columns}
         rows={
           employees.map((employee) => {

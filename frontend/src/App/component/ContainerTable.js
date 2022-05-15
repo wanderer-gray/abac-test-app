@@ -4,6 +4,7 @@ import Table from './Table'
 import { Grid } from '@mui/material'
 
 export default function ContainerTable ({
+  size,
   columns,
   rows
 }) {
@@ -13,6 +14,7 @@ export default function ContainerTable ({
       xs={12}
     >
       <Table
+        size={size}
         columns={columns}
         rows={rows}
       />
@@ -21,6 +23,7 @@ export default function ContainerTable ({
 }
 
 ContainerTable.propTypes = {
+  size: PropTypes.string,
   columns: PropTypes.array,
   rows: PropTypes.array
 }

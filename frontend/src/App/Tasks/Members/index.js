@@ -157,6 +157,7 @@ export default function Members ({ taskId }) {
       </ContainerSearch>
 
       <ContainerTable
+        size={'small'}
         columns={columns}
         rows={
           members.map((member) => {

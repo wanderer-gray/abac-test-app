@@ -45,7 +45,9 @@ function MyTableRow ({
         {columns.map(({ name, path, align }) => (
           <TableCell
             key={name}
+            variant={'body'}
             align={align}
+            width={name === 'collapse' ? '24px' : undefined}
           >
             {name === 'collapse'
               ? (
@@ -64,6 +66,7 @@ function MyTableRow ({
             <TableRow sx={{ '& > *': { borderBottom: 'unset' } }}>
               <TableCell
                 colSpan={columns.length}
+                variant={'body'}
                 sx={{
                   paddingBottom: 0,
                   paddingTop: 0
@@ -76,6 +79,7 @@ function MyTableRow ({
                 >
                   <Paper
                     elevation={0}
+                    square={true}
                     variant={'outlined'}
                     sx={{
                       marginTop: 1,
@@ -112,6 +116,7 @@ export default function MyTable ({
             {columns.map(({ name, title, align }) => (
               <TableCell
                 key={name}
+                variant={'head'}
                 align={align}
               >
                 {title ?? null}
