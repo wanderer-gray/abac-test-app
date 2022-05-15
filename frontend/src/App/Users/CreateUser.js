@@ -43,6 +43,7 @@ export default function CreateUser ({ onCreate }) {
         onSave={createUser}
       >
         <TextField
+          sx={{ marginBottom: 1 }}
           label={'Логин'}
           placeholder={'Введите логин...'}
           fullWidth={true}

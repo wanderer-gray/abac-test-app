@@ -50,8 +50,6 @@ const getMember = async (id) => {
     userId
   } = member
 
-  console.log(member)
-
   const [
     role,
     user
@@ -73,8 +71,6 @@ const getMembers = (ids) =>
 const searchMembers = async (filter) => {
   try {
     const ids = await MemberAPI.searchMembers(filter)
-
-    console.log(ids)
 
     return getMembers(ids)
   } catch {

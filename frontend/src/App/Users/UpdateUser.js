@@ -64,6 +64,7 @@ export default function UpdateUser ({ user, onUpdate }) {
         onSave={updateUser}
       >
         <TextField
+          sx={{ marginBottom: 1 }}
           label={'Логин'}
           placeholder={'Введите логин...'}
           fullWidth={true}

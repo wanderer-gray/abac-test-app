@@ -41,7 +41,7 @@ function MyTableRow ({
 
   return (
     <Fragment>
-      <TableRow>
+      <TableRow sx={{ '& > *': { borderBottom: 'none' } }}>
         {columns.map(({ name, path, align }) => (
           <TableCell
             key={name}
@@ -63,7 +63,7 @@ function MyTableRow ({
 
       {collapse
         ? (
-            <TableRow sx={{ '& > *': { borderBottom: 'unset' } }}>
+            <TableRow sx={{ '& > *': { borderBottom: 'none' } }}>
               <TableCell
                 colSpan={columns.length}
                 variant={'body'}

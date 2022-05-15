@@ -1,5 +1,6 @@
 const app = require('fastify')({
   logger: {
+    level: 'trace',
     prettyPrint: true
   }
 })
