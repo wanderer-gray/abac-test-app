@@ -1,5 +1,5 @@
-const host = '127.0.0.1'
-const port = 8080
+const host = 'localhost'
+const port = 81
 
 module.exports = {
   development: {
