@@ -50,7 +50,7 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "http://localhost:81",
+  "proxy": "http://localhost:82",
   "devDependencies": {
     "eslint": "^8.15.0",
     "eslint-config-standard": "^17.0.0",
